@@ -3,7 +3,7 @@ const express = require('express')
 const app = express()
 const cors = require('cors')
 const knex = require('./knex')
-app.set('port', 8080)
+app.set('port', process.env.PORT || 8080)
 
 //middleware
 app.use(cors())
@@ -14,5 +14,5 @@ app.get('/api/v1/pathData', async(request, response) => {
 })
 //routes
 app.listen(8080, () => {
-  console.log('server has started on port 8080')
+  console.log(`server has started on port ${app.get('port')}.`)
 })
