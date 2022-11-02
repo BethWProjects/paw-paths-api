@@ -13,6 +13,6 @@ app.get('/api/v1/pathData', async(request, response) => {
     response.status(200).json(pathData)
 })
 //routes
-app.listen(8080, () => {
-  console.log(`server has started on port ${app.get('port')}.`)
+app.listen(app.get('port'), () => {
+  console.log(`server has started on http://localhost:${app.get('port')}.`)
 })
